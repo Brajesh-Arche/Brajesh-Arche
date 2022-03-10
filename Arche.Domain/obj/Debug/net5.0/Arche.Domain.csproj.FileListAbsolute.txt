@@ -1,0 +1,12 @@
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\Arche.Domain.csproj.AssemblyReference.cache
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\Arche.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\Arche.Domain.AssemblyInfoInputs.cache
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\Arche.Domain.AssemblyInfo.cs
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\Arche.Domain.csproj.CoreCompileInputs.cache
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\bin\Debug\net5.0\Arche.Domain.deps.json
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\bin\Debug\net5.0\Arche.Domain.dll
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\bin\Debug\net5.0\Arche.Domain.pdb
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\Arche.Domain.dll
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\refint\Arche.Domain.dll
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\Arche.Domain.pdb
+C:\ProjectDemo\Arche\Arche.Domain\Arche.Domain\obj\Debug\net5.0\ref\Arche.Domain.dll

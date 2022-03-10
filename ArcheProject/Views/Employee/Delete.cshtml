@@ -1,0 +1,53 @@
+﻿@model Arche.Domain.Employee
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<h3>Are you sure want to delete this ?</h3>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(x=>x.EmployeeName)
+    </dt>
+</dl>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x=>x.EmployeeName)
+    </dd>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(x=>x.Email)
+    </dt>
+</dl>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x=>x.Email)
+    </dd>
+<dl>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(x=>x.Gender)
+    </dt>
+</dl>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x=>x.Gender)
+    </dd>
+<dl>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(x=>x.Designation)
+    </dt>
+</dl>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x=>x.Designation)
+    </dd>
+ <dl>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(x=>x.Salary)
+    </dt>
+</dl>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x=>x.Salary)
+    </dd>
+
+<form method="post">
+     <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Delete" asp-action="DeleteConfirm" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-success">Cancel</a>
+</form>
