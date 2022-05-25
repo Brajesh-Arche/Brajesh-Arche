@@ -1,12 +1,13 @@
-﻿@model IEnumerable<Arche.Domain.Employee>
+﻿@model IEnumerable<EmployeeModel>
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
 <a asp-action="Create" class="btn btn-primary">Add New Employee</a>
+<div></div>
 @if (Model.Count() > 0)
-{<table class="table">
+{    <h4>Stored on cache at: @Model.FirstOrDefault().DataRetriveon.ToString()</h4><table class="table">
     <thead>
         <tr>
             <th>
@@ -16,7 +17,7 @@
                 @Html.DisplayNameFor(x=>x.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(x=>x.Gender)
+                @Html.DisplayNameFor(x=>x.gender)
             </th>
             <th>
                 @Html.DisplayNameFor(x=>x.Designation)
@@ -41,7 +42,7 @@
                         @Html.DisplayFor(@modelitem=>@item.Email)
                     </td>
                     <td>
-                        @Html.DisplayFor(@modelitem=>@item.Gender)
+                        @Html.DisplayFor(@modelitem=>@item.gender)
                     </td>
                     <td>
                         @Html.DisplayFor(@modelitem=>@item.Designation)

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Arche.Domain;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Caching.Distributed;
+using ArcheProject.Models;
+using Newtonsoft.Json;
 
 namespace ArcheProject.Controllers
 {
@@ -11,15 +14,51 @@ namespace ArcheProject.Controllers
     public class EmployeeController : Controller
     {
         private ApplicationDb _db;
-        public EmployeeController(ApplicationDb db)
+        private readonly IDistributedCache _distributedCache;
+        public EmployeeController(ApplicationDb db,IDistributedCache distributedCache)
         {
             _db = db;
+            this._distributedCache= distributedCache;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Arche.Domain.Employee> obj = _db.employees.ToList();
-            return View(obj);
+            //var newemployees ="";
+            //IEnumerable<Employee> obj = _db.employees.ToList();
+            var employees=new List<EmployeeModel>();
+            var employeecache = _distributedCache.GetString("Employees");
+            if (employeecache != null)
+            {
+                var newemployees = JsonConvert.DeserializeObject<List<EmployeeModel>>(employeecache);
+                //_distributedCache.Remove("Employees");
+
+                if (employees !=newemployees || string.IsNullOrEmpty(_distributedCache.GetString("Employees")))
+                {
+                    employees = _db.employees.Select(x => new EmployeeModel {
+                        EmployeeName = x.EmployeeName,
+                        Designation = x.Designation,
+                        DataRetriveon = System.DateTime.Now,
+                        Email = x.Email,
+                        gender = x.Gender,
+                        Id = x.Id,
+                        Salary = x.Salary
+                    }).ToList();
+
+                    var employeesInString = JsonConvert.SerializeObject(employees);
+                    _distributedCache.SetString("Employees", employeesInString);
+                }
+            }
+            else
+            {
+                var employeeFromCache = _distributedCache.GetString("Employees");
+                if (employeeFromCache != null)
+                {
+                    employees = JsonConvert.DeserializeObject<List<EmployeeModel>>(employeeFromCache);
+                    _distributedCache.Remove("Employees");
+                }
+
+            }
+            return View(employees);
         }
         public IActionResult Create()
         {

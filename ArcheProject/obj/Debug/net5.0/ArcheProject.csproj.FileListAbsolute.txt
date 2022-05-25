@@ -440,3 +440,7 @@ C:\ProjectDemo\Arche\Arche.Domain\ArcheProject\obj\Debug\net5.0\Razor\Views\Empl
 C:\ProjectDemo\Arche\Arche.Domain\ArcheProject\obj\Debug\net5.0\Razor\Views\Employee\Delete.cshtml.g.cs
 C:\ProjectDemo\Arche\Arche.Domain\ArcheProject\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs
 C:\ProjectDemo\Arche\Arche.Domain\ArcheProject\obj\Debug\net5.0\Razor\Views\User\SignUp.cshtml.g.cs
+C:\ProjectDemo\Arche\Arche.Domain\ArcheProject\bin\Debug\net5.0\AutoMapper.dll
+C:\ProjectDemo\Arche\Arche.Domain\ArcheProject\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\ProjectDemo\Arche\Arche.Domain\ArcheProject\bin\Debug\net5.0\Microsoft.Extensions.Caching.Redis.dll
+C:\ProjectDemo\Arche\Arche.Domain\ArcheProject\bin\Debug\net5.0\StackExchange.Redis.StrongName.dll

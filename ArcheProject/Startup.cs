@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using AutoMapper;
+
 namespace ArcheProject
 {
     public class Startup
@@ -24,12 +26,18 @@ namespace ArcheProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper();
             //services.AddAuthentication(options => { options.RequireAuthenticatedSignIn = true; });
             //services.AddIdentityCore<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false);
             services.AddDbContext<ApplicationDb>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("EmployeeConnection")));
             services.AddControllersWithViews();
             services.AddSession();
+            services.AddDistributedRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379";
+                options.InstanceName = "RedisDemo";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

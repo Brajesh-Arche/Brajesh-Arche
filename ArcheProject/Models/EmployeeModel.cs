@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ArcheProject.Models
 {
@@ -15,5 +16,7 @@ namespace ArcheProject.Models
         public string Email { get; set; }
         public string Designation { get; set; }
         public decimal Salary { get; set; }
+        [NotMapped]
+        public DateTime DataRetriveon { get; set; }
     }
 }
